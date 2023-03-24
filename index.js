@@ -11,6 +11,24 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+const tutorial = 'what does the this keyword mean?';
+const words = tutorial.split(' ');
+const capitalizedWords = words.map(function(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+});
+const titleCasedTutorial = capitalizedWords.join(' ');
+console.log(titleCasedTutorial); // outputs "What Does The This Keyword Mean?"
+
+
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(function(tutorial) {
+    const words = tutorial.split(' ');
+    const capitalizedWords = words.map(function(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
+    return capitalizedWords.join(' ');
+  });
+};
+
+console.log(titleCased()); // outputs the transformed array of tutorials
+
